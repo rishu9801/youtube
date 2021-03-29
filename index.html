@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube</title>
+ 
+    <link rel="shortcut icon" type="image/jpg" href="images/youtube.png"/>
+    <!-- material icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!-- boostrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!-- navbar -->
+
+    <nav class="navbar fixed-top navbar-expand-lg p-0 m-0 ">
+      <div class="container-fluid bg d-flex justify-content-space py-2 px-3">
+    <div class="left"> 
+        <button class="btn material-icons" id="menu" onclick="toggle()">menu</button>
+        <a class="navbar-brand text-white fw-bold" href="#">
+            <img src="images/logo.svg">
+        </a>
+    </div>
+
+    <div class="center d-flex align-items-center">
+       <input type="text" class="search-box" placeholder="Search">
+       <button class="btn material-icons" onclick="searchBox()">search</button>
+       <span class="material-icons px-2">mic</span>
+       <div> <input type="text" placeholder="Search" id="search" class="search position-absolute">
+      </div>
+    </div>
+       
+    <div class="right">
+        <span class="material-icons">video_call</span>
+        <span class="material-icons">apps</span>
+        <span class="material-icons">notifications</span>
+        <span class="material-icons">account_circle</span>
+    </div>
+</nav>
+
+<div class="container-fluid main-container d-flex ">
+    <div class="sidebar" id="sidebar">
+      <div class="active menu-options   ">
+      <img src="images/home.svg" alt=""><span>home</span>
+      </div>
+      <div class="menu-options ">
+      <img src="images/explore.svg" alt=""><span>explore</span>
+      </div>
+      <div class="menu-options">
+      <img src="images/subscriptions.svg" alt=""><span>subscriptions</span>
+      </div>
+      <div class="hide line"></div>
+      <div class="menu-options ">
+      <img src="images/library.svg" alt=""><span>library</span>
+      </div>
+      <div class="hide menu-options ">
+      <img src="images/history.svg" alt=""><span>history</span>
+      </div>
+      <div class="hide menu-options ">
+      <img src="images/your-videos.svg" alt=""><span>your videos</span>
+      </div>
+      <div class="hide menu-options ">
+      <img src="images/watch-later.svg" alt=""><span>watch later</span>
+      </div>
+      <div class="hide menu-options ">
+      <img src="images/like.svg" alt=""><span>liked videos</span>
+      </div>
+      <div class="hide line"></div>
+      
+      <!-- subscriptions -->
+     <h3 class="heading hide">subscriptions</h3>
+      <div class="hide menu-options ">
+        <a href="https://www.youtube.com/user/tseries"><img src="images/tseries.png" alt=""><span>t-series</span></a>
+      </div>
+    
+      <div class="hide menu-options ">
+        <img src="images/tseries.png" alt=""><span>t-series</span>
+      </div>
+    
+      <div class="hide menu-options ">
+        <img src="images/tseries.png" alt=""><span>t-series</span>
+      </div>
+    
+      <div class="hide menu-options ">
+        <img src="images/tseries.png" alt=""><span>t-series</span>
+      </div>
+    
+      <div class="hide menu-options ">
+        <img src="images/tseries.png" alt=""><span>t-series</span>
+      </div>
+    
+      <div class="hide menu-options ">
+        <img src="images/tseries.png" alt=""><span>t-series</span>
+      </div>
+    
+      <div class="hide menu-options ">
+        <img src="images/tseries.png" alt=""><span>t-series</span>
+      </div>
+      <div class="hide line"></div>
+
+     <!-- more from youtube -->
+     <h3 class="heading hide">more from youtube</h3>
+     <div class="hide menu-options ">
+      <img src="images/youtube1.png" alt=""><span>youtube premium</span>
+    </div>
+     <div class="hide menu-options ">
+      <img src="images/films.svg" alt=""><span>films</span>
+    </div>
+     <div class="hide menu-options ">
+      <img src="images/gaming.svg" alt=""><span>gaming</span>
+    </div>
+     <div class="hide menu-options ">
+      <img src="images/live.svg" alt=""><span>live</span>
+    </div>
+     <div class="hide menu-options ">
+      <img src="images/fashion.svg" alt=""><span>fashion & beauty</span>
+    </div>
+     <div class="hide menu-options ">
+      <img src="images/learning.svg" alt=""><span>learning</span>
+    </div>
+     <div class="hide menu-options ">
+      <img src="images/sport.svg" alt=""><span>sport</span>
+    </div>
+    <div class="hide line"></div>
+     <div class="hide menu-options ">
+      <img src="images/settings.svg" alt=""><span>settings</span>
+    </div>
+     <div class="hide menu-options ">
+      <img src="images/report.svg" alt=""><span>report history</span>
+    </div>
+     <div class="hide menu-options ">
+      <img src="images/help.svg" alt=""><span>help</span>
+    </div>
+     <div class="hide menu-options ">
+      <img src="images/feedback.svg" alt=""><span>send feedback</span>
+    </div>
+
+    </div>
+
+    <div class="row text-capitalize" id="main">
+        <div class="col-md-6 col-lg-3 video-container">
+          <a href="https://www.youtube.com/watch?v=UcOx6Bm3_4k&ab_channel=T-Series">
+            <div class="card">
+              <img src="images/thumbnail.png" class="card-img-top" alt="...">
+              <div class="card-body d-flex">
+                <span class="p-2"><img src="images/tseries.png"></span>
+                <span><h5 class="title"> full song: yeh aaina|kabir singh|shahid kapoor,kiara advani nikitad|amaal malik</h5>
+                  <p class="views">tseries <br> 37M views . 1year ago</p></span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-3 video-container">
+          <div class="card">
+            <img src="images/thumbnail.png" class="card-img-top" alt="...">
+            <div class="card-body d-flex">
+              <span class="p-2"><img src="images/tseries.png"></span>
+              <span><h5 class="title"> full song: yeh aaina|kabir singh|shahid kapoor,kiara advani nikitad|amaal malik</h5>
+                <p class="views">tseries <br> 37M views . 1year ago</p></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 video-container">
+          <div class="card">
+            <img src="images/thumbnail.png" class="card-img-top" alt="...">
+            <div class="card-body d-flex">
+              <span class="p-2"><img src="images/tseries.png"></span>
+              <span><h5 class="title"> full song: yeh aaina|kabir singh|shahid kapoor,kiara advani nikitad|amaal malik</h5>
+                <p class="views">tseries <br> 37M views . 1year ago</p></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 video-container">
+          <div class="card">
+            <img src="images/thumbnail.png" class="card-img-top" alt="...">
+            <div class="card-body d-flex">
+              <span class="p-2"><img src="images/tseries.png"></span>
+              <span><h5 class="title"> full song: yeh aaina|kabir singh|shahid kapoor,kiara advani nikitad|amaal malik</h5>
+                <p class="views">tseries <br> 37M views . 1year ago</p></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 video-container">
+          <div class="card">
+            <img src="images/thumbnail.png" class="card-img-top" alt="...">
+            <div class="card-body d-flex">
+              <span class="p-2"><img src="images/tseries.png"></span>
+              <span><h5 class="title"> full song: yeh aaina|kabir singh|shahid kapoor,kiara advani nikitad|amaal malik</h5>
+                <p class="views">tseries <br> 37M views . 1year ago</p></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 video-container">
+          <div class="card">
+            <img src="images/thumbnail.png" class="card-img-top" alt="...">
+            <div class="card-body d-flex">
+              <span class="p-2"><img src="images/tseries.png"></span>
+              <span><h5 class="title"> full song: yeh aaina|kabir singh|shahid kapoor,kiara advani nikitad|amaal malik</h5>
+                <p class="views">tseries <br> 37M views . 1year ago</p></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 video-container">
+          <div class="card">
+            <img src="images/thumbnail.png" class="card-img-top" alt="...">
+            <div class="card-body d-flex">
+              <span class="p-2"><img src="images/tseries.png"></span>
+              <span><h5 class="title"> full song: yeh aaina|kabir singh|shahid kapoor,kiara advani nikitad|amaal malik</h5>
+                <p class="views">tseries <br> 37M views . 1year ago</p></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 video-container">
+          <div class="card">
+            <img src="images/thumbnail.png" class="card-img-top" alt="...">
+            <div class="card-body d-flex">
+              <span class="p-2"><img src="images/tseries.png"></span>
+              <span><h5 class="title"> full song: yeh aaina|kabir singh|shahid kapoor,kiara advani nikitad|amaal malik</h5>
+                <p class="views">tseries <br> 37M views . 1year ago</p></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 video-container">
+          <div class="card">
+            <img src="images/thumbnail.png" class="card-img-top" alt="...">
+            <div class="card-body d-flex">
+              <span class="p-2"><img src="images/tseries.png"></span>
+              <span><h5 class="title"> full song: yeh aaina|kabir singh|shahid kapoor,kiara advani nikitad|amaal malik</h5>
+                <p class="views">tseries <br> 37M views . 1year ago</p></span>
+            </div>
+          </div>
+        </div>
+             
+              
+        <div class="col-md-6 col-lg-3 video-container">
+          <div class="card">
+            <img src="images/thumbnail.png" class="card-img-top" alt="...">
+            <div class="card-body d-flex">
+              <span class="p-2"><img src="images/tseries.png"></span>
+              <span><h5 class="title"> full song: yeh aaina|kabir singh|shahid kapoor,kiara advani nikitad|amaal malik</h5>
+                <p class="views">tseries <br> 37M views . 1year ago</p></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 video-container">
+          <div class="card">
+            <img src="images/thumbnail.png" class="card-img-top" alt="...">
+            <div class="card-body d-flex">
+              <span class="p-2"><img src="images/tseries.png"></span>
+              <span><h5 class="title"> full song: yeh aaina|kabir singh|shahid kapoor,kiara advani nikitad|amaal malik</h5>
+                <p class="views">tseries <br> 37M views . 1year ago</p></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 video-container">
+          <div class="card">
+            <img src="images/thumbnail.png" class="card-img-top" alt="...">
+            <div class="card-body d-flex">
+              <span class="p-2"><img src="images/tseries.png"></span>
+              <span><h5 class="title"> full song: yeh aaina|kabir singh|shahid kapoor,kiara advani nikitad|amaal malik</h5>
+                <p class="views">tseries <br> 37M views . 1year ago</p></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 video-container">
+          <div class="card">
+            <img src="images/thumbnail.png" class="card-img-top" alt="...">
+            <div class="card-body d-flex">
+              <span class="p-2"><img src="images/tseries.png"></span>
+              <span><h5 class="title"> full song: yeh aaina|kabir singh|shahid kapoor,kiara advani nikitad|amaal malik</h5>
+                <p class="views">tseries <br> 37M views . 1year ago</p></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 video-container">
+          <div class="card">
+            <img src="images/thumbnail.png" class="card-img-top" alt="...">
+            <div class="card-body d-flex">
+              <span class="p-2"><img src="images/tseries.png"></span>
+              <span><h5 class="title"> full song: yeh aaina|kabir singh|shahid kapoor,kiara advani nikitad|amaal malik</h5>
+                <p class="views">tseries <br> 37M views . 1year ago</p></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 video-container">
+          <div class="card">
+            <img src="images/thumbnail.png" class="card-img-top" alt="...">
+            <div class="card-body d-flex">
+              <span class="p-2"><img src="images/tseries.png"></span>
+              <span><h5 class="title"> full song: yeh aaina|kabir singh|shahid kapoor,kiara advani nikitad|amaal malik</h5>
+                <p class="views">tseries <br> 37M views . 1year ago</p></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 video-container">
+          <div class="card">
+            <img src="images/thumbnail.png" class="card-img-top" alt="...">
+            <div class="card-body d-flex">
+              <span class="p-2"><img src="images/tseries.png"></span>
+              <span><h5 class="title"> full song: yeh aaina|kabir singh|shahid kapoor,kiara advani nikitad|amaal malik</h5>
+                <p class="views">tseries <br> 37M views . 1year ago</p></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 video-container">
+          <div class="card">
+            <img src="images/thumbnail.png" class="card-img-top" alt="...">
+            <div class="card-body d-flex">
+              <span class="p-2"><img src="images/tseries.png"></span>
+              <span><h5 class="title"> full song: yeh aaina|kabir singh|shahid kapoor,kiara advani nikitad|amaal malik</h5>
+                <p class="views">tseries <br> 37M views . 1year ago</p></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 video-container">
+          <div class="card">
+            <img src="images/thumbnail.png" class="card-img-top" alt="...">
+            <div class="card-body d-flex">
+              <span class="p-2"><img src="images/tseries.png"></span>
+              <span><h5 class="title"> full song: yeh aaina|kabir singh|shahid kapoor,kiara advani nikitad|amaal malik</h5>
+                <p class="views">tseries <br> 37M views . 1year ago</p></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 video-container">
+          <div class="card">
+            <img src="images/thumbnail.png" class="card-img-top" alt="...">
+            <div class="card-body d-flex">
+              <span class="p-2"><img src="images/tseries.png"></span>
+              <span><h5 class="title"> full song: yeh aaina|kabir singh|shahid kapoor,kiara advani nikitad|amaal malik</h5>
+                <p class="views">tseries <br> 37M views . 1year ago</p></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 video-container">
+          <div class="card">
+            <img src="images/thumbnail.png" class="card-img-top" alt="...">
+            <div class="card-body d-flex">
+              <span class="p-2"><img src="images/tseries.png"></span>
+              <span><h5 class="title"> full song: yeh aaina|kabir singh|shahid kapoor,kiara advani nikitad|amaal malik</h5>
+                <p class="views">tseries <br> 37M views . 1year ago</p></span>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+        
+       
+     
+
+    <!-- bootstrap js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+      crossorigin="anonymous">
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
